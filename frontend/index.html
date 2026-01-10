@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kharagpur Data Science Hackathon 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e3f2fd,#f9f9f9);
+    overflow:hidden;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:25px 20px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+/* NAVBAR */
+.navbar{
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-item{
+    cursor:pointer;
+    font-weight:bold;
+    color:#555;
+    padding:6px 14px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.nav-item:hover{
+    background:#eef3ff;
+}
+
+.nav-item.active{
+    background:#1e3c72;
+    color:white;
+}
+
+/* SLIDER CONTAINER */
+.slider-container{
+    position:relative;
+    width:100%;
+    height:calc(100vh - 140px);
+    overflow:hidden;
+}
+
+/* SLIDES */
+.slider{
+    display:flex;
+    height:100%;
+    transition:transform 0.8s ease-in-out;
+}
+
+.slide{
+    min-width:100%;
+    padding:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:white;
+    max-width:900px;
+    width:100%;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    animation:fadeIn 0.8s ease;
+}
+
+h2{
+    color:#1e3c72;
+    margin-bottom:20px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* DOTS */
+.dots{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    background:#bbb;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#1e3c72;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:#1e3c72;
+    color:white;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .slide{ padding:20px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kharagpur Data Science Hackathon 2026</h1>
+    <p>Problem Statement → Solution Approach</p>
+</header>
+
+<nav class="navbar">
+    <span class="nav-item active" onclick="goToSlide(0)">Problem</span>
+    <span class="nav-item" onclick="goToSlide(1)">Task</span>
+    <span class="nav-item" onclick="goToSlide(2)">Solution</span>
+    <span class="nav-item" onclick="goToSlide(3)">Tech Stack</span>
+    <span class="nav-item" onclick="goToSlide(4)">Results</span>
+</nav>
+
+<div class="slider-container">
+
+    <div class="slider" id="slider">
+
+        <!-- SLIDE 1 -->
+        <div class="slide">
+            <div class="card">
+                <h2>📌 Problem Statement</h2>
+                <p>
+                    We are given a complete novel and a hypothetical backstory
+                    of a main character. The backstory may appear plausible
+                    but could violate long-term narrative constraints.
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <div class="card">
+                <h2>🎯 Task</h2>
+                <ul>
+                    <li>Analyze long narrative context (100k+ words)</li>
+                    <li>Track character behavior over time</li>
+                    <li>Check causal and logical consistency</li>
+                    <li>Output: 1 (Consistent) or 0 (Contradiction)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <div class="card">
+                <h2>🛠 Solution Approach</h2>
+                <ul>
+                    <li>Chunk novel and store in vector database</li>
+                    <li>Extract atomic backstory claims</li>
+                    <li>Retrieve evidence across the story</li>
+                    <li>Apply temporal & causal reasoning</li>
+                    <li>Aggregate for final decision</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide">
+            <div class="card">
+                <h2>⚙️ Tech Stack</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Pathway Framework</li>
+                    <li>Large Language Models</li>
+                    <li>Custom reasoning logic</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide">
+            <div class="card">
+                <h2>📊 Results</h2>
+                <table>
+                    <tr>
+                        <th>Story ID</th>
+                        <th>Prediction</th>
+                        <th>Reason</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Consistent character evolution</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>Contradiction in core belief</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>Valid causal chain</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dots" id="dots"></div>
+</div>
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const slider = document.getElementById("slider");
+const navItems = document.querySelectorAll(".nav-item");
+const dotsContainer = document.getElementById("dots");
+
+/* Create dots */
+slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if(i === 0) dot.classList.add("active");
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+});
+const dots = document.querySelectorAll(".dot");
+
+function updateUI(){
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+
+    navItems.forEach(item => item.classList.remove("active"));
+    navItems[currentIndex].classList.add("active");
+}
+
+function goToSlide(index){
+    currentIndex = index;
+    updateUI();
+}
+</script>
+
+</body>
+</html>
