@@ -28,7 +28,7 @@ All code is designed to run end-to-end in a clean environment.
 
 No manual intervention is required once inputs are provided.
 
-# Team: The Auralion
+# Team: The Aurelion
 Bhavya – Exploratory Data Analysis & Model Development
 
 Rutvi – Frontend & UI Design
